@@ -1107,16 +1107,6 @@ h2 {
   gap: 18px;
   margin-top: 25px;
 }
-.enterprise-demo-note {
-  grid-column: 1 / -1;
-  font-size: 12px;
-  line-height: 1.6;
-  color: var(--muted-foreground);
-  border: 1px dashed var(--border);
-  border-radius: 6px;
-  padding: 10px 14px;
-  margin: 0;
-}
 .enterprise-card {
   border: 1px solid var(--border);
   border-radius: 6px;

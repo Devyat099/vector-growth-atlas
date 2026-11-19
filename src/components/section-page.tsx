@@ -22,10 +22,6 @@ function SectionContent({ section }: { section: keyof typeof sections }) {
           <p>{info.detail}</p>
           {section === "enterprises" && (
             <div className="enterprise-grid">
-              <p className="enterprise-demo-note">
-                Демонстрационные карточки — показывают, как будет выглядеть каталог участников
-                проекта.
-              </p>
               {demoEnterprises.map((item) => (
                 <details key={item.id} className="enterprise-card">
                   <summary>
