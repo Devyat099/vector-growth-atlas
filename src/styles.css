@@ -231,6 +231,7 @@ textarea {
 .brand-text {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 5px;
 }
 .brand-wordmark {
@@ -1317,8 +1318,8 @@ h2 {
     gap: 15px;
   }
   .hero-arrow {
-    width: 50px;
-    height: 50px;
+    width: auto;
+    height: 46px;
   }
   .hero-tagline {
     font-size: 19px;
@@ -1464,7 +1465,8 @@ h2 {
     grid-template-columns: 1fr;
   }
   .hero-arrow {
-    width: 43px;
+    width: auto;
+    height: 40px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
