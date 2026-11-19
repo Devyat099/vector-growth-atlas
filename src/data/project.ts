@@ -1,6 +1,9 @@
 import welding from "@/assets/industrial-welding.jpg.asset.json";
 import engineer from "@/assets/engineer.jpg.asset.json";
 import production from "@/assets/production.jpg.asset.json";
+import episodePeople from "@/assets/episode-people.jpg.asset.json";
+import episodeEnvironment from "@/assets/episode-environment.jpg.asset.json";
+import episodeTechnology from "@/assets/episode-technology.jpg.asset.json";
 
 export const images = {
   welding:
@@ -15,6 +18,20 @@ export const images = {
     import.meta.env.MODE === "github-pages"
       ? `${import.meta.env.BASE_URL}pages-assets/production.jpg`
       : production.url,
+};
+export const episodeImages = {
+  people:
+    import.meta.env.MODE === "github-pages"
+      ? `${import.meta.env.BASE_URL}pages-assets/episode-people.jpg`
+      : episodePeople.url,
+  environment:
+    import.meta.env.MODE === "github-pages"
+      ? `${import.meta.env.BASE_URL}pages-assets/episode-environment.jpg`
+      : episodeEnvironment.url,
+  technology:
+    import.meta.env.MODE === "github-pages"
+      ? `${import.meta.env.BASE_URL}pages-assets/episode-technology.jpg`
+      : episodeTechnology.url,
 };
 export const directions = [
   {
@@ -61,22 +78,22 @@ export const episode = {
       id: "01",
       title: "Масштаб и технологии",
       text: "Цеха, оборудование и настоящие рабочие процессы.",
-      image: images.production,
-      alt: "Оборудование и рабочая линия в производственном цехе",
+      image: episodeImages.technology,
+      alt: "Двое мужчин разговаривают в промышленном цехе на фоне стальных резервуаров",
     },
     {
       id: "02",
       title: "Люди дела",
       text: "Истории рабочих, инженеров и руководителей.",
-      image: images.engineer,
-      alt: "Специалист на производстве за разговором",
+      image: episodeImages.people,
+      alt: "Разговор двух людей в хранилище с рядами дубовых бочек",
     },
     {
       id: "03",
       title: "Среда и возможности",
       text: "Условия труда, обучение и забота о сотрудниках.",
-      image: images.welding,
-      alt: "Сварочные работы в цехе: искры и металл",
+      image: episodeImages.environment,
+      alt: "Беседа за столом в светлом офисе с панорамными окнами",
     },
   ],
 } as const;

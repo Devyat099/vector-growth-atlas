@@ -45,7 +45,14 @@ for (const route of routes) {
   }
 }
 
-for (const name of ["industrial-welding", "engineer", "production"]) {
+for (const name of [
+  "industrial-welding",
+  "engineer",
+  "production",
+  "episode-people",
+  "episode-environment",
+  "episode-technology",
+]) {
   const bytes = await readFile(path.join(output, "pages-assets", `${name}.jpg`));
   assert(bytes[0] === 0xff && bytes[1] === 0xd8, `Invalid JPEG: ${name}`);
 }

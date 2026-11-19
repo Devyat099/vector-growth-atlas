@@ -8,6 +8,18 @@ The prototype uses real Unsplash stock photographs under the Unsplash License (h
 
 All images are served using Lovable asset pointers. No generative images are used.
 
+# Episode photographs
+
+The three photographs in the home page section «Наполнение выпуска» are user-supplied
+editorial stills (uploaded 2026-11-19). They were not generated and were not redrawn:
+each was only cropped to 16:9, and the burned-in broadcast caption along the bottom
+edge of the workshop photo was cut off. They illustrate real conversations on site and
+do not name the people or the enterprises shown.
+
+- `episode-technology.jpg` — conversation in a workshop with steel tanks (576x283 source).
+- `episode-people.jpg` — conversation in a cellar with oak barrels (974x600 source).
+- `episode-environment.jpg` — conversation at a table in a bright office (598x250 source).
+
 # Map source
 
 Administrative geometry: https://github.com/codeforgermany/click_that_hood/blob/main/public/data/russia.geojson
