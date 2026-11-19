@@ -10,8 +10,8 @@ const centers = new Map(
     const nums = (region.path ?? "").match(/-?\d+(\.\d+)?/g)?.map(Number) ?? [];
     let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
     for (let i = 0; i + 1 < nums.length; i += 2) {
-      minX = Math.min(minX, nums[i]); maxX = Math.max(maxX, nums[i]);
-      minY = Math.min(minY, nums[i + 1]); maxY = Math.max(maxY, nums[i + 1]);
+      minX = Math.min(minX, (nums[i] ?? 0)); maxX = Math.max(maxX, (nums[i] ?? 0));
+      minY = Math.min(minY, (nums[i + 1] ?? 0)); maxY = Math.max(maxY, (nums[i + 1] ?? 0));
     }
     return [region.id, { x: (minX + maxX) / 2, y: (minY + maxY) / 2 }] as const;
   }),
