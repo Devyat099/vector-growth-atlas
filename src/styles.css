@@ -554,6 +554,41 @@ h2 {
 .map-region.selected {
   fill: var(--primary);
 }
+.route-line {
+  fill: none;
+  stroke: var(--brand-red, var(--destructive));
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0.9;
+  animation: route-draw 0.9s ease-out forwards;
+}
+.route-head { fill: var(--brand-red, var(--destructive)); }
+.route-pin {
+  opacity: 0;
+  transform: translateY(-8px) scale(0.4);
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: pin-drop 0.5s cubic-bezier(.3,1.6,.5,1) forwards;
+}
+.route-pin-body { fill: var(--brand-red, var(--destructive)); stroke: var(--background); stroke-width: 1.2; }
+.route-pin-dot { fill: var(--background); }
+.route-pulse {
+  fill: none;
+  stroke: var(--brand-red, var(--destructive));
+  stroke-width: 1.2;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pin-pulse 1.6s ease-out infinite;
+}
+@keyframes route-draw { to { stroke-dashoffset: 0; } }
+@keyframes pin-drop { to { opacity: 1; transform: none; } }
+@keyframes pin-pulse { 0% { opacity: .7; transform: scale(.3); } 100% { opacity: 0; transform: scale(1.6); } }
+@media (prefers-reduced-motion: reduce) {
+  .route-line, .route-pin, .route-pulse { animation-duration: 0.01s; animation-iteration-count: 1; }
+}
 .map-status {
   display: flex;
   align-items: center;
