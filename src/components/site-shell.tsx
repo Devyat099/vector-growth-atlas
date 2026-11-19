@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect, useRef, type ReactNode } from "react";
 import { Link, useLocation } from "@tanstack/react-router";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Home, Menu, X, ArrowUpRight } from "lucide-react";
 import { Brand, Tricolor } from "@/components/brand";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -22,11 +22,18 @@ export function Header() {
   const [menu, setMenu] = useState(false);
   const open = useParticipation();
   const location = useLocation();
+  const isHome = location.pathname === "/";
   return (
-    <header className={`site-header ${location.pathname !== "/" ? "header-solid" : ""}`}>
+    <header className={`site-header ${isHome ? "" : "header-solid"}`}>
       <div className="container-wide header-inner">
         <Brand />
         <nav className="desktop-nav" aria-label="Главная навигация">
+          {!isHome && (
+            <Link to="/" className="nav-home">
+              <Home size={13} />
+              На Главную
+            </Link>
+          )}
           {nav.map((item) => (
             <Link key={item.to} to={item.to}>
               {item.label}
@@ -49,6 +56,12 @@ export function Header() {
       </div>
       {menu && (
         <nav className="mobile-nav" aria-label="Мобильная навигация">
+          {!isHome && (
+            <Link to="/" className="nav-home" onClick={() => setMenu(false)}>
+              <Home size={14} />
+              На Главную
+            </Link>
+          )}
           {nav.map((item) => (
             <Link key={item.to} to={item.to} onClick={() => setMenu(false)}>
               {item.label}
@@ -69,12 +82,20 @@ export function Header() {
   );
 }
 export function Footer() {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
   return (
     <footer className="site-footer">
       <div className="container-wide">
         <div className="footer-top">
           <Brand surface="light" />
           <nav className="footer-nav" aria-label="Навигация в подвале">
+            {!isHome && (
+              <Link to="/" className="nav-home">
+                <Home size={12} />
+                На Главную
+              </Link>
+            )}
             <Link to="/about">О проекте</Link>
             <Link to="/media">Медиацентр</Link>
             <Link to="/regions">Регионы</Link>

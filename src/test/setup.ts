@@ -18,3 +18,16 @@ Object.defineProperty(window, "matchMedia", {
     dispatchEvent: () => {},
   }),
 });
+
+// jsdom ships neither observer, and the scroll-reveal wrappers on every section need them.
+class ObserverStub {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+  takeRecords() {
+    return [];
+  }
+}
+
+Object.defineProperty(window, "IntersectionObserver", { writable: true, value: ObserverStub });
+Object.defineProperty(window, "ResizeObserver", { writable: true, value: ObserverStub });

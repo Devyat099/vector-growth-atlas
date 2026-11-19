@@ -261,6 +261,50 @@ textarea {
 .menu-toggle {
   display: none;
 }
+.desktop-nav a.nav-home,
+.mobile-nav a.nav-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  align-self: start;
+  width: fit-content;
+  padding: 8px 15px;
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  background: var(--glass);
+  color: var(--on-ink);
+  opacity: 1;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.desktop-nav a.nav-home:hover,
+.mobile-nav a.nav-home:hover {
+  opacity: 1;
+  background: var(--brand-red);
+  border-color: var(--brand-red);
+  color: var(--on-ink);
+}
+.footer-nav a.nav-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--foreground);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.footer-nav a.nav-home:hover {
+  background: var(--brand-red);
+  border-color: var(--brand-red);
+  color: var(--on-ink);
+}
 .hero {
   position: relative;
   min-height: 790px;
