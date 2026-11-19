@@ -223,18 +223,23 @@ textarea {
   color: inherit;
 }
 .brand-mark {
-  width: 40px;
-  height: 40px;
+  height: 38px;
+  width: auto;
   flex-shrink: 0;
+  display: block;
 }
-.brand-name {
-  font-size: 17px;
-  font-weight: 850;
-  line-height: 1.2;
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.brand-wordmark {
+  height: 30px;
+  width: auto;
+  display: block;
 }
 .brand-caption {
   display: block;
-  margin-top: 5px;
   font-size: 8px;
   font-weight: 500;
   opacity: 0.66;
@@ -324,9 +329,8 @@ textarea {
   align-items: center;
 }
 .hero-arrow {
-  width: 88px;
-  height: 88px;
-  color: var(--brand-red);
+  height: 78px;
+  width: auto;
   animation: arrow-float 6s ease-in-out infinite;
 }
 .hero-tagline {
@@ -906,11 +910,10 @@ h2 {
     display: inline-flex;
   }
   .brand-mark {
-    width: 32px;
-    height: 32px;
+    height: 26px;
   }
-  .brand-name {
-    font-size: 15px;
+  .brand-wordmark {
+    height: 21px;
   }
   .brand-caption {
     font-size: 7px;

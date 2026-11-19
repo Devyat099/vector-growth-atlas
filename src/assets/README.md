@@ -13,3 +13,15 @@ All images are served using Lovable asset pointers. No generative images are use
 Administrative geometry: https://github.com/codeforgermany/click_that_hood/blob/main/public/data/russia.geojson
 
 Dataset attribution: Click That 'Hood / OpenStreetMap, ODbL. Dataset vintage: 2013. The map explicitly discloses its vintage and is not represented as an up-to-date boundary register.
+
+# Logo source
+
+The logo is the user-supplied brand file (uploaded 2026-11-19, 885x770 px on a light
+drafting-grid background). It was not redrawn or generated: the sign and both wordmark
+lines were cut out of that file, the background and grid were removed, and the letter
+counters were left open.
+
+- `logo-mark-sm.png` / `logo-mark-lg.png` — the 3D sign, for the header and for the cover.
+- `logo-wm-light-sm.png` — wordmark for dark surfaces (header, mobile menu).
+- `logo-wm-dark-sm.png` — wordmark for light surfaces (footer).
+- `public/favicon.png` — the sign, resized to 64x64.

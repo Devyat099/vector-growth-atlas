@@ -1,4 +1,7 @@
 import { Link } from "@tanstack/react-router";
+import markAsset from "@/assets/logo-mark-sm.png.asset.json";
+import wordmarkLight from "@/assets/logo-wm-light-sm.png.asset.json";
+import wordmarkDark from "@/assets/logo-wm-dark-sm.png.asset.json";
 
 export function GrowthMark({ className = "" }: { className?: string }) {
   return (
@@ -7,12 +10,28 @@ export function GrowthMark({ className = "" }: { className?: string }) {
     </svg>
   );
 }
-export function Brand() {
+export function Brand({ surface = "dark" }: { surface?: "dark" | "light" }) {
+  const wordmark = surface === "dark" ? wordmarkLight : wordmarkDark;
   return (
     <Link to="/" className="brand" aria-label="Вектор роста — главная">
-      <GrowthMark className="brand-mark" />
-      <span className="brand-name">
-        ВЕКТОР РОСТА<span className="brand-caption">Люди. Производство. Возможности.</span>
+      <img
+        src={markAsset.url}
+        alt=""
+        className="brand-mark"
+        width={233}
+        height={120}
+        draggable={false}
+      />
+      <span className="brand-text">
+        <img
+          src={wordmark.url}
+          alt="Вектор роста"
+          className="brand-wordmark"
+          width={271}
+          height={90}
+          draggable={false}
+        />
+        <span className="brand-caption">Люди. Производство. Возможности.</span>
       </span>
     </Link>
   );

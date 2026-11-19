@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { directions, images } from "@/data/project";
 import { GrowthMark, Tricolor } from "@/components/brand";
+import markAsset from "@/assets/logo-mark-lg.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { useParticipation } from "@/components/site-shell";
 import { InteractiveRussiaMap } from "@/components/interactive-russia-map";
@@ -32,7 +33,14 @@ export function HeroSection() {
           ВЕКТОР
           <span className="hero-title-row">
             РОСТА
-            <GrowthMark className="hero-arrow" />
+            <img
+            src={markAsset.url}
+            alt=""
+            className="hero-arrow"
+            width={466}
+            height={240}
+            draggable={false}
+          />
           </span>
         </h1>
         <p className="hero-tagline">Сила производства. Истории людей.</p>

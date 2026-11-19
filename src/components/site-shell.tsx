@@ -73,7 +73,7 @@ export function Footer() {
     <footer className="site-footer">
       <div className="container-wide">
         <div className="footer-top">
-          <Brand />
+          <Brand surface="light" />
           <nav className="footer-nav" aria-label="Навигация в подвале">
             <Link to="/about">О проекте</Link>
             <Link to="/media">Медиацентр</Link>
