@@ -2,7 +2,20 @@ import welding from "@/assets/industrial-welding.jpg.asset.json";
 import engineer from "@/assets/engineer.jpg.asset.json";
 import production from "@/assets/production.jpg.asset.json";
 
-export const images = { welding: welding.url, engineer: engineer.url, production: production.url };
+export const images = {
+  welding:
+    import.meta.env.MODE === "github-pages"
+      ? `${import.meta.env.BASE_URL}pages-assets/industrial-welding.jpg`
+      : welding.url,
+  engineer:
+    import.meta.env.MODE === "github-pages"
+      ? `${import.meta.env.BASE_URL}pages-assets/engineer.jpg`
+      : engineer.url,
+  production:
+    import.meta.env.MODE === "github-pages"
+      ? `${import.meta.env.BASE_URL}pages-assets/production.jpg`
+      : production.url,
+};
 export const directions = [
   {
     id: "01",
