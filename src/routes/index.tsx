@@ -1,23 +1,30 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteShell } from "@/components/site-shell";
+import {
+  HeroSection,
+  ProjectDirections,
+  GeographySection,
+  ParticipationSection,
+} from "@/components/home-sections";
+import { pageHead } from "@/data/project";
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () =>
+    pageHead(
+      "Сила производства. Истории людей.",
+      "Федеральный документальный медиапроект о людях, предприятиях и возможностях промышленной России.",
+    ),
   component: Index,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <SiteShell>
+      <main>
+        <HeroSection />
+        <ProjectDirections />
+        <GeographySection />
+        <ParticipationSection />
+      </main>
+    </SiteShell>
   );
 }

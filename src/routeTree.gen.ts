@@ -10,33 +10,167 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as BusinessRouteImport } from './routes/business'
+import { Route as CareersRouteImport } from './routes/careers'
+import { Route as ContactsRouteImport } from './routes/contacts'
+import { Route as EmploymentRouteImport } from './routes/employment'
+import { Route as EnterprisesRouteImport } from './routes/enterprises'
+import { Route as MediaRouteImport } from './routes/media'
+import { Route as ParticipateRouteImport } from './routes/participate'
+import { Route as RegionsRouteImport } from './routes/regions'
+import { Route as TeamRouteImport } from './routes/team'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BusinessRoute = BusinessRouteImport.update({
+  id: '/business',
+  path: '/business',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactsRoute = ContactsRouteImport.update({
+  id: '/contacts',
+  path: '/contacts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmploymentRoute = EmploymentRouteImport.update({
+  id: '/employment',
+  path: '/employment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnterprisesRoute = EnterprisesRouteImport.update({
+  id: '/enterprises',
+  path: '/enterprises',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MediaRoute = MediaRouteImport.update({
+  id: '/media',
+  path: '/media',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParticipateRoute = ParticipateRouteImport.update({
+  id: '/participate',
+  path: '/participate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegionsRoute = RegionsRouteImport.update({
+  id: '/regions',
+  path: '/regions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/business': typeof BusinessRoute
+  '/careers': typeof CareersRoute
+  '/contacts': typeof ContactsRoute
+  '/employment': typeof EmploymentRoute
+  '/enterprises': typeof EnterprisesRoute
+  '/media': typeof MediaRoute
+  '/participate': typeof ParticipateRoute
+  '/regions': typeof RegionsRoute
+  '/team': typeof TeamRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/business': typeof BusinessRoute
+  '/careers': typeof CareersRoute
+  '/contacts': typeof ContactsRoute
+  '/employment': typeof EmploymentRoute
+  '/enterprises': typeof EnterprisesRoute
+  '/media': typeof MediaRoute
+  '/participate': typeof ParticipateRoute
+  '/regions': typeof RegionsRoute
+  '/team': typeof TeamRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/business': typeof BusinessRoute
+  '/careers': typeof CareersRoute
+  '/contacts': typeof ContactsRoute
+  '/employment': typeof EmploymentRoute
+  '/enterprises': typeof EnterprisesRoute
+  '/media': typeof MediaRoute
+  '/participate': typeof ParticipateRoute
+  '/regions': typeof RegionsRoute
+  '/team': typeof TeamRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/business'
+    | '/careers'
+    | '/contacts'
+    | '/employment'
+    | '/enterprises'
+    | '/media'
+    | '/participate'
+    | '/regions'
+    | '/team'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/business'
+    | '/careers'
+    | '/contacts'
+    | '/employment'
+    | '/enterprises'
+    | '/media'
+    | '/participate'
+    | '/regions'
+    | '/team'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/business'
+    | '/careers'
+    | '/contacts'
+    | '/employment'
+    | '/enterprises'
+    | '/media'
+    | '/participate'
+    | '/regions'
+    | '/team'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BusinessRoute: typeof BusinessRoute
+  CareersRoute: typeof CareersRoute
+  ContactsRoute: typeof ContactsRoute
+  EmploymentRoute: typeof EmploymentRoute
+  EnterprisesRoute: typeof EnterprisesRoute
+  MediaRoute: typeof MediaRoute
+  ParticipateRoute: typeof ParticipateRoute
+  RegionsRoute: typeof RegionsRoute
+  TeamRoute: typeof TeamRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +182,91 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/business': {
+      id: '/business'
+      path: '/business'
+      fullPath: '/business'
+      preLoaderRoute: typeof BusinessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacts': {
+      id: '/contacts'
+      path: '/contacts'
+      fullPath: '/contacts'
+      preLoaderRoute: typeof ContactsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/employment': {
+      id: '/employment'
+      path: '/employment'
+      fullPath: '/employment'
+      preLoaderRoute: typeof EmploymentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/enterprises': {
+      id: '/enterprises'
+      path: '/enterprises'
+      fullPath: '/enterprises'
+      preLoaderRoute: typeof EnterprisesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/media': {
+      id: '/media'
+      path: '/media'
+      fullPath: '/media'
+      preLoaderRoute: typeof MediaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/participate': {
+      id: '/participate'
+      path: '/participate'
+      fullPath: '/participate'
+      preLoaderRoute: typeof ParticipateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/regions': {
+      id: '/regions'
+      path: '/regions'
+      fullPath: '/regions'
+      preLoaderRoute: typeof RegionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BusinessRoute: BusinessRoute,
+  CareersRoute: CareersRoute,
+  ContactsRoute: ContactsRoute,
+  EmploymentRoute: EmploymentRoute,
+  EnterprisesRoute: EnterprisesRoute,
+  MediaRoute: MediaRoute,
+  ParticipateRoute: ParticipateRoute,
+  RegionsRoute: RegionsRoute,
+  TeamRoute: TeamRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

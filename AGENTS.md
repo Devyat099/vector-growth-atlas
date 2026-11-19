@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Application architecture
+- Keep shared navigation and the participation dialog in SiteShell, with independent home sections and centralized editorial data; this supports incremental platform expansion.
+- Create a real leaf route with its own metadata for every public navigation destination; do not create speculative detail or admin pages before content exists.
+- Participation is explicitly frontend-only demonstration until real intake is connected; never report delivery or persist personal data in demonstration mode.
+- Use preprojected administrative SVG paths from the attributed open geographic dataset for the autonomous map; keep the dataset vintage visible and update boundaries before presenting it as current.
+- Keep image URLs in asset pointers and editorial data, not individual sections, so approved photography can be replaced centrally.
