@@ -23,11 +23,11 @@ export function HeroSparks() {
       seed = (seed * 1103515245 + 12345) % 2147483648;
       return seed / 2147483648;
     };
-    return Array.from({ length: 26 }, () => ({
+    return Array.from({ length: 70 }, () => ({
       // Concentrate sparks on the right half, where the welder works.
-      left: 34 + rand() * 62,
-      top: 12 + rand() * 76,
-      size: 2 + rand() * 3.4,
+      left: 22 + rand() * 74,
+      top: 6 + rand() * 86,
+      size: 1.6 + rand() * 3.6,
       depth: 6 + rand() * 22,
       delay: -(rand() * 9),
       duration: 4.5 + rand() * 5,
