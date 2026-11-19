@@ -1,37 +1,37 @@
-import welding from "@/assets/industrial-welding.jpg.asset.json";
-import engineer from "@/assets/engineer.jpg.asset.json";
-import production from "@/assets/production.jpg.asset.json";
-import episodePeople from "@/assets/episode-people.jpg.asset.json";
-import episodeEnvironment from "@/assets/episode-environment.jpg.asset.json";
-import episodeTechnology from "@/assets/episode-technology.jpg.asset.json";
+import welding from "@/assets/industrial-welding.jpg";
+import engineer from "@/assets/engineer.jpg";
+import production from "@/assets/production.jpg";
+import episodePeople from "@/assets/episode-people.jpg";
+import episodeEnvironment from "@/assets/episode-environment.jpg";
+import episodeTechnology from "@/assets/episode-technology.jpg";
 
 export const images = {
   welding:
     import.meta.env.MODE === "github-pages"
       ? `${import.meta.env.BASE_URL}pages-assets/industrial-welding.jpg`
-      : welding.url,
+      : welding,
   engineer:
     import.meta.env.MODE === "github-pages"
       ? `${import.meta.env.BASE_URL}pages-assets/engineer.jpg`
-      : engineer.url,
+      : engineer,
   production:
     import.meta.env.MODE === "github-pages"
       ? `${import.meta.env.BASE_URL}pages-assets/production.jpg`
-      : production.url,
+      : production,
 };
 export const episodeImages = {
   people:
     import.meta.env.MODE === "github-pages"
       ? `${import.meta.env.BASE_URL}pages-assets/episode-people.jpg`
-      : episodePeople.url,
+      : episodePeople,
   environment:
     import.meta.env.MODE === "github-pages"
       ? `${import.meta.env.BASE_URL}pages-assets/episode-environment.jpg`
-      : episodeEnvironment.url,
+      : episodeEnvironment,
   technology:
     import.meta.env.MODE === "github-pages"
       ? `${import.meta.env.BASE_URL}pages-assets/episode-technology.jpg`
-      : episodeTechnology.url,
+      : episodeTechnology,
 };
 export const directions = [
   {

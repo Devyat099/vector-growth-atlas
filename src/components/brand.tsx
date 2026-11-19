@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import markAsset from "@/assets/logo-mark-sm.png.asset.json";
-import wordmarkLight from "@/assets/logo-wm-light-sm.png.asset.json";
-import wordmarkDark from "@/assets/logo-wm-dark-sm.png.asset.json";
+import markAsset from "@/assets/logo-mark-sm.png";
+import wordmarkLight from "@/assets/logo-wm-light-sm.png";
+import wordmarkDark from "@/assets/logo-wm-dark-sm.png";
 
 export function GrowthMark({ className = "" }: { className?: string }) {
   return (
@@ -16,7 +16,7 @@ export function Brand({ surface = "dark" }: { surface?: "dark" | "light" }) {
   return (
     <Link to="/" className="brand" aria-label="Вектор роста — главная">
       <img
-        src={isGitHubPages ? `${import.meta.env.BASE_URL}favicon.png` : markAsset.url}
+        src={isGitHubPages ? `${import.meta.env.BASE_URL}favicon.png` : markAsset}
         alt=""
         className="brand-mark"
         width={233}
@@ -30,7 +30,7 @@ export function Brand({ surface = "dark" }: { surface?: "dark" | "light" }) {
           </strong>
         ) : (
           <img
-            src={wordmark.url}
+            src={wordmark}
             alt="Вектор роста"
             className="brand-wordmark"
             width={271}

@@ -6,7 +6,7 @@ The prototype uses real Unsplash stock photographs under the Unsplash License (h
 - Engineering: https://images.unsplash.com/photo-1581092921461-eab62e97a780
 - Production: https://images.unsplash.com/photo-1581092160562-40aa08e78837
 
-All images are served using Lovable asset pointers. No generative images are used.
+All images are stored directly in this folder and imported by the app. No generative images are used.
 
 # Episode photographs
 

@@ -17,7 +17,7 @@ import {
 import { directions, episode, images } from "@/data/project";
 import { GrowthMark, Tricolor } from "@/components/brand";
 import { HeroSparks } from "@/components/hero-sparks";
-import markAsset from "@/assets/logo-mark-lg.png.asset.json";
+import markAsset from "@/assets/logo-mark-lg.png";
 import { Button } from "@/components/ui/button";
 import { useParticipation } from "@/components/site-shell";
 import { InteractiveRussiaMap } from "@/components/interactive-russia-map";
@@ -54,7 +54,7 @@ export function HeroSection() {
           <span className="hero-title-row">
             РОСТА
             <img
-            src={import.meta.env.MODE === "github-pages" ? `${import.meta.env.BASE_URL}favicon.png` : markAsset.url}
+            src={import.meta.env.MODE === "github-pages" ? `${import.meta.env.BASE_URL}favicon.png` : markAsset}
             alt=""
             className="hero-arrow"
             width={466}
