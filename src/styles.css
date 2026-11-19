@@ -474,17 +474,36 @@ textarea {
   z-index: 2;
   right: 56px;
   bottom: 110px;
-  font-size: 10px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: var(--on-ink-muted);
+  gap: 12px;
+  padding: 11px 20px;
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  background: var(--glass);
+  backdrop-filter: blur(8px);
+  color: var(--on-ink);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
 }
 .photo-dot {
-  width: 6px;
-  height: 6px;
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
   background: var(--brand-red);
   border-radius: 50%;
+  box-shadow: 0 0 0 4px oklch(0.61 0.225 26 / 0.28);
+  animation: photo-dot-pulse 2.4s ease-in-out infinite;
+}
+@keyframes photo-dot-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px oklch(0.61 0.225 26 / 0.22);
+  }
+  50% {
+    box-shadow: 0 0 0 9px oklch(0.61 0.225 26 / 0.04);
+  }
 }
 .editorial-section {
   padding: 88px 0;
@@ -1319,7 +1338,10 @@ h2 {
   .hero-photo-label {
     right: 20px;
     bottom: 90px;
-    font-size: 8px;
+    gap: 9px;
+    padding: 8px 14px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
   }
   .hero-bottom {
     font-size: 8px;
