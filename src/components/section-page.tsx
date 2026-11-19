@@ -1,5 +1,5 @@
 import { Film, ArrowUpRight, ChevronDown, Factory } from "lucide-react";
-import { sections, demoEnterprises } from "@/data/project";
+import { sections, demoEnterprises, images } from "@/data/project";
 import { Button } from "@/components/ui/button";
 import { SiteShell, useParticipation } from "@/components/site-shell";
 import { ProjectDirections } from "@/components/home-sections";
@@ -29,6 +29,12 @@ function SectionContent({ section }: { section: keyof typeof sections }) {
               {demoEnterprises.map((item) => (
                 <details key={item.id} className="enterprise-card">
                   <summary>
+                    <img
+                      className="enterprise-card-photo"
+                      src={images[item.image]}
+                      alt=""
+                      loading="lazy"
+                    />
                     <span className="enterprise-card-icon">
                       <Factory size={22} />
                     </span>
@@ -56,9 +62,11 @@ function SectionContent({ section }: { section: keyof typeof sections }) {
               <p>{info.empty}</p>
             </div>
           )}
-          <Button variant="hero" size="hero" onClick={open}>
-            Предложить предприятие <ArrowUpRight />
-          </Button>
+          {section !== "enterprises" && (
+            <Button variant="hero" size="hero" onClick={open}>
+              Предложить предприятие <ArrowUpRight />
+            </Button>
+          )}
         </div>
       </div>
       {section === "about" && <ProjectDirections />}

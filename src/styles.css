@@ -1102,7 +1102,8 @@ h2 {
 }
 .enterprise-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
+  align-items: start;
   gap: 18px;
   margin-top: 25px;
 }
@@ -1136,6 +1137,17 @@ h2 {
   cursor: pointer;
   list-style: none;
   outline: none;
+}
+.enterprise-card-photo {
+  flex: none;
+  width: 150px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+@media (max-width: 600px) {
+  .enterprise-card-photo { width: 84px; height: 64px; }
+  .enterprise-card-icon { display: none; }
 }
 .enterprise-card summary::-webkit-details-marker {
   display: none;
@@ -1184,6 +1196,7 @@ h2 {
 .enterprise-card-body {
   border-top: 1px solid var(--border);
   margin: 0 22px;
+  max-width: 820px;
   padding: 16px 0 22px;
 }
 .enterprise-card-body p {

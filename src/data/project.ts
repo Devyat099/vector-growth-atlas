@@ -103,6 +103,7 @@ export const episode = {
 export const demoEnterprises = [
   {
     id: "avtovaz",
+    image: "production",
     name: "АвтоВАЗ",
     tagline: "Автомобилестроение · Тольятти, Самарская область",
     description:
@@ -116,6 +117,7 @@ export const demoEnterprises = [
   },
   {
     id: "aviazavod",
+    image: "engineer",
     name: "Авиазавод",
     tagline: "Авиастроение · демонстрационная карточка",
     description:
@@ -129,6 +131,7 @@ export const demoEnterprises = [
   },
   {
     id: "nornickel",
+    image: "welding",
     name: "Норникель",
     tagline: "Металлургия · Норильск, Красноярский край",
     description:
