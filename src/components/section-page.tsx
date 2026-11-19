@@ -58,7 +58,7 @@ function SectionContent({ section }: { section: keyof typeof sections }) {
               <p>{info.empty}</p>
             </div>
           )}
-          {section !== "enterprises" && (
+          {section !== "enterprises" && section !== "team" && (
             <Button variant="hero" size="hero" onClick={open}>
               Предложить предприятие <ArrowUpRight />
             </Button>
