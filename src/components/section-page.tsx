@@ -1,5 +1,5 @@
-import { Film, ArrowUpRight } from "lucide-react";
-import { sections } from "@/data/project";
+import { Film, ArrowUpRight, ChevronDown, Factory } from "lucide-react";
+import { sections, demoEnterprises } from "@/data/project";
 import { Button } from "@/components/ui/button";
 import { SiteShell, useParticipation } from "@/components/site-shell";
 import { ProjectDirections } from "@/components/home-sections";
@@ -20,7 +20,37 @@ function SectionContent({ section }: { section: keyof typeof sections }) {
         <div className="page-body reveal">
           <h2>{info.label}</h2>
           <p>{info.detail}</p>
-          {info.empty && (
+          {section === "enterprises" && (
+            <div className="enterprise-grid">
+              <p className="enterprise-demo-note">
+                Демонстрационные карточки — показывают, как будет выглядеть каталог участников
+                проекта.
+              </p>
+              {demoEnterprises.map((item) => (
+                <details key={item.id} className="enterprise-card">
+                  <summary>
+                    <span className="enterprise-card-icon">
+                      <Factory size={22} />
+                    </span>
+                    <span className="enterprise-card-head">
+                      <span className="enterprise-card-name">{item.name}</span>
+                      <span className="enterprise-card-tagline">{item.tagline}</span>
+                    </span>
+                    <ChevronDown className="enterprise-card-chevron" size={20} />
+                  </summary>
+                  <div className="enterprise-card-body">
+                    <p>{item.description}</p>
+                    <ul>
+                      {item.facts.map((fact) => (
+                        <li key={fact}>{fact}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </details>
+              ))}
+            </div>
+          )}
+          {info.empty && section !== "enterprises" && (
             <div className="empty-state">
               <Film size={30} />
               <p>{info.empty}</p>
