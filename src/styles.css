@@ -1135,7 +1135,9 @@ h2 {
   color: var(--muted-foreground);
 }
 .reveal {
-  animation: reveal-up 0.8s both;
+  /* backwards, not both: after the intro the animation must release
+     transform, otherwise it overrides hover transforms forever */
+  animation: reveal-up 0.8s backwards;
 }
 .direction-card:nth-child(2) {
   animation-delay: 0.1s;
