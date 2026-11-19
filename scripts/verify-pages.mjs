@@ -4,8 +4,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const output = path.resolve(fileURLToPath(new URL("../dist-pages/client/", import.meta.url)));
-const base = "/vector-growth-atlas/";
-const origin = "https://devyat099.github.io";
+const base = "/";
+const origin = "https://xn----8sbemzyboblfg.xn--p1ai";
 const routeFiles = await readdir(new URL("../src/routes/", import.meta.url));
 const routes = routeFiles
   .filter((file) => file.endsWith(".tsx") && !file.startsWith("__"))
@@ -40,6 +40,7 @@ for (const route of routes) {
   assert(!titles.has(title), `Duplicate page title: ${title}`);
   titles.add(title);
   assert(!html.includes("/__l5e/"), `Lovable-only asset in /${route}`);
+  assert(!html.includes("/vector-growth-atlas/"), `Outdated GitHub Pages base in /${route}`);
   for (const match of html.matchAll(/\b(?:src|href)="([^"]+)"/g)) {
     await checkLocalUrl(match[1], `${origin}${base}${route}`);
   }
