@@ -54,7 +54,7 @@ export function HeroSection() {
           <span className="hero-title-row">
             РОСТА
             <img
-            src={import.meta.env.MODE === "github-pages" ? `${import.meta.env.BASE_URL}favicon.png` : markAsset}
+            src={markAsset}
             alt=""
             className="hero-arrow"
             width={466}

@@ -12,11 +12,10 @@ export function GrowthMark({ className = "" }: { className?: string }) {
 }
 export function Brand({ surface = "dark" }: { surface?: "dark" | "light" }) {
   const wordmark = surface === "dark" ? wordmarkLight : wordmarkDark;
-  const isGitHubPages = import.meta.env.MODE === "github-pages";
   return (
     <Link to="/" className="brand" aria-label="Вектор роста — главная">
       <img
-        src={isGitHubPages ? `${import.meta.env.BASE_URL}favicon.png` : markAsset}
+        src={markAsset}
         alt=""
         className="brand-mark"
         width={233}
@@ -24,20 +23,14 @@ export function Brand({ surface = "dark" }: { surface?: "dark" | "light" }) {
         draggable={false}
       />
       <span className="brand-text">
-        {isGitHubPages ? (
-          <strong className="whitespace-nowrap text-[20px] leading-none font-extrabold tracking-[-0.035em]">
-            ВЕКТОР РОСТА
-          </strong>
-        ) : (
-          <img
-            src={wordmark}
-            alt="Вектор роста"
-            className="brand-wordmark"
-            width={271}
-            height={90}
-            draggable={false}
-          />
-        )}
+        <img
+          src={wordmark}
+          alt="Вектор роста"
+          className="brand-wordmark"
+          width={271}
+          height={90}
+          draggable={false}
+        />
         <span className="brand-caption">Люди. Производство. Возможности.</span>
       </span>
     </Link>

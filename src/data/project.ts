@@ -6,32 +6,14 @@ import episodeEnvironment from "@/assets/episode-environment.jpg";
 import episodeTechnology from "@/assets/episode-technology.jpg";
 
 export const images = {
-  welding:
-    import.meta.env.MODE === "github-pages"
-      ? `${import.meta.env.BASE_URL}pages-assets/industrial-welding.jpg`
-      : welding,
-  engineer:
-    import.meta.env.MODE === "github-pages"
-      ? `${import.meta.env.BASE_URL}pages-assets/engineer.jpg`
-      : engineer,
-  production:
-    import.meta.env.MODE === "github-pages"
-      ? `${import.meta.env.BASE_URL}pages-assets/production.jpg`
-      : production,
+  welding,
+  engineer,
+  production,
 };
 export const episodeImages = {
-  people:
-    import.meta.env.MODE === "github-pages"
-      ? `${import.meta.env.BASE_URL}pages-assets/episode-people.jpg`
-      : episodePeople,
-  environment:
-    import.meta.env.MODE === "github-pages"
-      ? `${import.meta.env.BASE_URL}pages-assets/episode-environment.jpg`
-      : episodeEnvironment,
-  technology:
-    import.meta.env.MODE === "github-pages"
-      ? `${import.meta.env.BASE_URL}pages-assets/episode-technology.jpg`
-      : episodeTechnology,
+  people: episodePeople,
+  environment: episodeEnvironment,
+  technology: episodeTechnology,
 };
 export const directions = [
   {
