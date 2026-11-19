@@ -131,7 +131,7 @@ export function ProjectDirections() {
         <div className="section-top">
           <div>
             <div className="section-number">01 / Векторы развития</div>
-            <h2>Одна страна. Много возможностей.</h2>
+            <h2>Одна страна. Миллион возможностей.</h2>
           </div>
           <p className="section-summary">
             Четыре направления, которые объединяют людей,
