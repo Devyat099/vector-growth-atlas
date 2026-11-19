@@ -619,12 +619,17 @@ h2 {
   font-weight: 650;
   line-height: 1.3;
   margin: 0 0 10px;
+  /* long Russian words must break inside the card, never cross its border */
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 .direction-content p {
   font-size: 11px;
   line-height: 1.8;
   margin: 0;
   color: var(--on-ink-muted);
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 .direction-link-arrow {
   transition: transform 0.3s;
