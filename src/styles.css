@@ -616,11 +616,6 @@ h2 {
 .map-legend span:nth-child(2) i {
   background: var(--primary);
 }
-.map-source {
-  font-size: 8px;
-  color: var(--muted-foreground);
-  margin-top: 12px;
-}
 .geo-layout {
   display: grid;
   grid-template-columns: 1fr 330px;

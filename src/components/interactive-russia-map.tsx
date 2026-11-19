@@ -133,10 +133,6 @@ export function InteractiveRussiaMap({ initialRegion }: { initialRegion?: string
             Выбранный регион
           </span>
         </div>
-        <p className="map-source">
-          Границы: Click That ’Hood / OpenStreetMap, ODbL. Набор 2013 года; не отражает последующие
-          изменения.
-        </p>
       </div>
       <aside className="region-panel">
         <div className="region-tag">Регион в фокусе</div>
