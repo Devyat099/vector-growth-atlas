@@ -284,6 +284,59 @@ textarea {
   background: var(--hero-shade);
   pointer-events: none;
 }
+.hero-sparks {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.spark {
+  position: absolute;
+  transform: translate(
+    calc(var(--mx, 0) * var(--depth, 10) * 1px),
+    calc(var(--my, 0) * var(--depth, 10) * 0.7px)
+  );
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hero:hover .spark {
+  transition-duration: 0.35s;
+}
+.spark-dot {
+  display: block;
+  border-radius: 50%;
+  background: radial-gradient(circle, oklch(0.95 0.12 85) 0%, oklch(0.78 0.19 60) 45%, transparent 72%);
+  box-shadow: 0 0 6px 1px oklch(0.8 0.18 60 / 0.55);
+  opacity: 0;
+  animation: spark-drift 6s ease-in-out infinite;
+}
+@keyframes spark-drift {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.6);
+  }
+  18% {
+    opacity: 0.95;
+  }
+  55% {
+    opacity: 0.55;
+    transform: translate(calc(var(--drift, 20px) * 0.4), calc(var(--drift, 20px) * -0.6)) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--drift, 20px), calc(var(--drift, 20px) * -1.4)) scale(0.5);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .spark-dot {
+    animation: none;
+    opacity: 0.5;
+  }
+  .spark {
+    transform: none;
+    transition: none;
+  }
+}
 .hero-content {
   position: relative;
   z-index: 2;

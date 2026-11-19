@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { directions, episode, images } from "@/data/project";
 import { GrowthMark, Tricolor } from "@/components/brand";
+import { HeroSparks } from "@/components/hero-sparks";
 import markAsset from "@/assets/logo-mark-lg.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { useParticipation } from "@/components/site-shell";
@@ -24,13 +25,25 @@ import { InteractiveRussiaMap } from "@/components/interactive-russia-map";
 export function HeroSection() {
   const open = useParticipation();
   return (
-    <section className="hero">
+    <section
+      className="hero"
+      onMouseMove={(e) => {
+        const r = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty("--mx", String(((e.clientX - r.left) / r.width - 0.5) * 2));
+        e.currentTarget.style.setProperty("--my", String(((e.clientY - r.top) / r.height - 0.5) * 2));
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.setProperty("--mx", "0");
+        e.currentTarget.style.setProperty("--my", "0");
+      }}
+    >
       <img
         className="hero-image"
         src={images.welding}
         alt="Сварщик за работой: искры и металл в производственном цехе"
         fetchPriority="high"
       />
+      <HeroSparks />
       <div className="container-wide hero-content reveal">
         <div className="eyebrow">
           <Tricolor />
