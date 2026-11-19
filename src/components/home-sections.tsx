@@ -6,6 +6,13 @@ import {
   BriefcaseBusiness,
   TrendingUp,
   CircleArrowRight,
+  ClipboardList,
+  Video,
+  Clapperboard,
+  Rocket,
+  ShieldCheck,
+  Lock,
+  HardHat,
 } from "lucide-react";
 import { directions, images } from "@/data/project";
 import { GrowthMark, Tricolor } from "@/components/brand";
@@ -146,6 +153,93 @@ export function GeographySection() {
     </section>
   );
 }
+const processSteps = [
+  {
+    id: "01",
+    icon: ClipboardList,
+    title: "Подготовка и сценарий",
+    text: "Согласовываем план съёмок, список спикеров и пропуски. Полная безопасность до выезда.",
+  },
+  {
+    id: "02",
+    icon: Video,
+    title: "Один съёмочный день",
+    text: "Съёмочная группа из 3–4 человек снимает цеха, процессы и интервью в рабочем ритме.",
+  },
+  {
+    id: "03",
+    icon: Clapperboard,
+    title: "Монтаж и согласование",
+    text: "Вы проверяете и утверждаете черновой монтаж до публикации. Соблюдаем коммерческую тайну.",
+  },
+  {
+    id: "04",
+    icon: Rocket,
+    title: "Премьера и дистрибуция",
+    text: "Выход фильма о предприятии и вертикальных роликов в соцсетях проекта.",
+  },
+];
+
+const processGuarantees = [
+  {
+    icon: ShieldCheck,
+    title: "Без остановки линий",
+    text: "Снимаем в рабочем ритме, не мешая выполнению плана.",
+  },
+  {
+    icon: Lock,
+    title: "Коммерческая тайна",
+    text: "В кадр попадает только то, что разрешено руководством.",
+  },
+  {
+    icon: HardHat,
+    title: "Строго по ТБ",
+    text: "Команда проходит инструктаж и работает в касках и СИЗ.",
+  },
+];
+
+export function ProcessSection() {
+  return (
+    <section className="editorial-section process-section">
+      <div className="container-wide">
+        <div className="section-top">
+          <div>
+            <div className="section-number">03 / Как это устроено</div>
+            <h2>Как проходят съёмки: один день, который не отвлечёт от работы.</h2>
+          </div>
+          <p className="section-summary">
+            Съёмки проходят в естественном рабочем ритме. Мы берём на себя все процессы — от
+            сценария до финального монтажа.
+          </p>
+        </div>
+        <ol className="process-grid">
+          {processSteps.map((step) => (
+            <li key={step.id} className="process-step reveal">
+              <div className="process-step-head">
+                <span className="process-step-number">{step.id}</span>
+                <step.icon className="process-step-icon" strokeWidth={1.4} />
+              </div>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </li>
+          ))}
+        </ol>
+        <div className="process-guarantees">
+          {processGuarantees.map((item) => (
+            <div key={item.title} className="process-guarantee">
+              <item.icon className="process-guarantee-icon" strokeWidth={1.6} />
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function ParticipationSection() {
   const open = useParticipation();
   return (
@@ -153,7 +247,7 @@ export function ParticipationSection() {
       <GrowthMark className="participation-arrow" />
       <div className="container-wide participation-inner">
         <div>
-          <div className="section-number">03 / Станьте частью проекта</div>
+          <div className="section-number">04 / Станьте частью проекта</div>
           <h2>
             Расскажите о своём
             <br />

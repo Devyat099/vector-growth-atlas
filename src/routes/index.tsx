@@ -4,6 +4,7 @@ import {
   HeroSection,
   ProjectDirections,
   GeographySection,
+  ProcessSection,
   ParticipationSection,
 } from "@/components/home-sections";
 import { pageHead } from "@/data/project";
@@ -23,6 +24,7 @@ function Index() {
         <HeroSection />
         <ProjectDirections />
         <GeographySection />
+        <ProcessSection />
         <ParticipationSection />
       </main>
     </SiteShell>
