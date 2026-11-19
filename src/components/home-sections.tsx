@@ -14,7 +14,7 @@ import {
   Lock,
   HardHat,
 } from "lucide-react";
-import { directions, images } from "@/data/project";
+import { directions, episode, images } from "@/data/project";
 import { GrowthMark, Tricolor } from "@/components/brand";
 import markAsset from "@/assets/logo-mark-lg.png.asset.json";
 import { Button } from "@/components/ui/button";
@@ -134,13 +134,53 @@ export function ProjectDirections() {
     </section>
   );
 }
+export function EpisodeSection() {
+  return (
+    <section className="editorial-section episode-section">
+      <div className="container-wide">
+        <div className="section-top">
+          <div>
+            <div className="section-number">02 / {episode.label}</div>
+            <h2>
+              {episode.titleLines[0]}{" "}
+              <br className="hidden sm:block" />
+              {episode.titleLines[1]}
+            </h2>
+          </div>
+          <div className="episode-duration">
+            <strong>{episode.duration}</strong>
+            {episode.durationLines.map((line) => (
+              <span key={line}>{line}</span>
+            ))}
+          </div>
+        </div>
+        <div className="episode-grid">
+          {episode.parts.map((part) => (
+            <article key={part.id} className="episode-card reveal">
+              <div className="episode-media">
+                <img src={part.image} alt={part.alt} loading="lazy" />
+              </div>
+              <div className="episode-card-body">
+                <h3>
+                  <span>{part.id}</span>
+                  {part.title}
+                </h3>
+                <p>{part.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 export function GeographySection() {
   return (
     <section className="editorial-section geo-section">
       <div className="container-wide">
         <div className="section-top">
           <div>
-            <div className="section-number">02 / География проекта</div>
+            <div className="section-number">03 / География проекта</div>
             <h2>Вся Россия — в фокусе.</h2>
           </div>
           <p className="section-summary">
@@ -204,7 +244,7 @@ export function ProcessSection() {
       <div className="container-wide">
         <div className="section-top">
           <div>
-            <div className="section-number">03 / Как это устроено</div>
+            <div className="section-number">04 / Как это устроено</div>
             <h2>Как проходят съёмки: один день, который не отвлечёт от работы.</h2>
           </div>
           <p className="section-summary">
@@ -247,7 +287,7 @@ export function ParticipationSection() {
       <GrowthMark className="participation-arrow" />
       <div className="container-wide participation-inner">
         <div>
-          <div className="section-number">04 / Станьте частью проекта</div>
+          <div className="section-number">05 / Станьте частью проекта</div>
           <h2>
             Расскажите о своём
             <br />

@@ -3,6 +3,7 @@ import { SiteShell } from "@/components/site-shell";
 import {
   HeroSection,
   ProjectDirections,
+  EpisodeSection,
   GeographySection,
   ProcessSection,
   ParticipationSection,
@@ -23,6 +24,7 @@ function Index() {
       <main>
         <HeroSection />
         <ProjectDirections />
+        <EpisodeSection />
         <GeographySection />
         <ProcessSection />
         <ParticipationSection />
