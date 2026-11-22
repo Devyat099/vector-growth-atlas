@@ -326,14 +326,17 @@ export function ParticipationSection() {
 export function PeopleSection() {
   return (
     <section className="editorial-section people-section">
-      <div className="container-wide people-grid">
-        <div className="reveal">
+      <div className="container-wide">
+        <div className="people-head reveal">
           <div className="section-number">02 / {people.label}</div>
           <h2>{people.title}</h2>
           <Tricolor />
-          <PeoplePhoto />
         </div>
-        <div className="people-body reveal">
+        <div className="people-grid">
+          <div className="reveal">
+            <PeoplePhoto />
+          </div>
+          <div className="people-body reveal">
           <p className="people-lead">{people.lead}</p>
           <ul className="people-list">
             {people.paths.map((p) => (
@@ -344,7 +347,8 @@ export function PeopleSection() {
             ))}
           </ul>
           <blockquote className="people-quote">{people.quote}</blockquote>
-          <p className="people-outro">{people.outro}</p>
+           <p className="people-outro">{people.outro}</p>
+          </div>
         </div>
       </div>
     </section>
