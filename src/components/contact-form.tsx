@@ -1,7 +1,8 @@
 import { useState, type FormEvent } from "react";
 import { CheckCircle2, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { participationSchema } from "@/lib/participation";
+import { PhoneInput } from "@/components/phone-input";
+import { PHONE_PLACEHOLDER, participationSchema } from "@/lib/participation";
 
 export function ContactForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -46,7 +47,7 @@ export function ContactForm() {
             ["enterprise", "Название предприятия", "Например, название вашей компании"],
             ["region", "Регион", "Область, край или республика"],
             ["person", "Контактное лицо", "Ваше имя"],
-            ["contact", "Телефон", "+7 или email"],
+            ["contact", "Телефон", PHONE_PLACEHOLDER],
             [
               "description",
               "Краткое описание предприятия",
@@ -68,6 +69,13 @@ export function ContactForm() {
                 maxLength={name === "comment" ? 2000 : 3000}
                 aria-invalid={!!errors[name]}
                 aria-describedby={errors[name] ? `error-${name}` : undefined}
+              />
+            ) : name === "contact" ? (
+              <PhoneInput
+                id={`form-${name}`}
+                name={name}
+                invalid={!!errors[name]}
+                describedBy={errors[name] ? `error-${name}` : undefined}
               />
             ) : (
               <input
