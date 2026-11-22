@@ -36,4 +36,5 @@ counters were left open.
 - `logo-mark-sm.png` / `logo-mark-lg.png` — the 3D sign, for the header and for the cover.
 - `logo-wm-light-sm.png` — wordmark for dark surfaces (header, mobile menu).
 - `logo-wm-dark-sm.png` — wordmark for light surfaces (footer).
-- `public/favicon.png` — the sign, resized to 64x64.
+- `public/favicon.png` — the sign, cropped to its own bounds and placed on a 256x256
+  canvas with a 7% margin, so the mark fills the tab icon as much as possible.
