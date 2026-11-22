@@ -106,7 +106,7 @@ export function ContactForm() {
         </p>
       )}
       <Button type="submit" size="hero" variant="hero">
-        Проверить заявку <ArrowUpRight />
+        Подать Заявку <ArrowUpRight />
       </Button>
     </form>
   );
