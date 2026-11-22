@@ -1626,3 +1626,43 @@ h2 {
 .people-photo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary); }
 @media (max-width: 860px) { .people-photo { aspect-ratio: 16 / 10; height: auto; min-height: 0; } }
 @media (prefers-reduced-motion: reduce) { .people-photo::after { display: none; } .people-photo img, .people-photo.is-visible img { transform: none; animation: none; transition: none; } .people-photo figcaption { opacity: 1; transform: none; transition: none; } }
+
+/* ===== Миссия проекта (/about) ===== */
+.mission-section { padding-top: 64px; }
+.mission-head { max-width: 880px; margin-bottom: clamp(24px, 3vw, 40px); }
+.mission-head h2 { font-size: clamp(30px, 3.4vw, 46px); margin-bottom: 22px; }
+.mission-lead { max-width: 900px; margin: 0 0 clamp(32px, 4vw, 54px); font-size: clamp(16px, 1.35vw, 19px); line-height: 1.7; color: var(--foreground); }
+.mission-focus-intro { margin: 0 0 14px; font-size: 10px; font-weight: 650; text-transform: uppercase; letter-spacing: 1.8px; color: var(--muted-foreground); }
+.mission-focus-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+.mission-focus-item { position: relative; border-bottom: 1px solid var(--border); transition: background .35s; }
+.mission-focus-item::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--primary); transform: scaleY(0); transform-origin: top; transition: transform .45s cubic-bezier(.2,.7,.2,1); }
+.mission-focus-item.is-active::before { transform: scaleY(1); }
+.mission-focus-item:hover { background: color-mix(in oklab, var(--muted) 55%, transparent); }
+.mission-focus-button { width: 100%; display: flex; align-items: center; gap: 18px; padding: 20px 4px 20px 20px; background: none; border: 0; cursor: pointer; text-align: left; color: inherit; font: inherit; }
+.mission-focus-id { flex: none; font-size: 11px; font-weight: 700; letter-spacing: 1.4px; color: var(--muted-foreground); transition: color .3s; }
+.mission-focus-item.is-active .mission-focus-id { color: var(--primary); }
+.mission-focus-title { flex: 1; font-size: clamp(15px, 1.25vw, 19px); font-weight: 650; line-height: 1.35; }
+.mission-focus-chevron { flex: none; color: var(--muted-foreground); transition: transform .4s cubic-bezier(.2,.7,.2,1), color .3s; }
+.mission-focus-item.is-active .mission-focus-chevron { transform: rotate(180deg); color: var(--primary); }
+.mission-focus-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s cubic-bezier(.2,.7,.2,1); }
+.mission-focus-item.is-active .mission-focus-panel { grid-template-rows: 1fr; }
+.mission-focus-panel-inner { overflow: hidden; }
+.mission-focus-panel-inner p { margin: 0; padding: 0 60px 24px 20px; max-width: 720px; font-size: 14px; line-height: 1.8; color: var(--muted-foreground); opacity: 0; transform: translateY(-6px); transition: opacity .4s .12s, transform .4s .12s; }
+.mission-focus-item.is-active .mission-focus-panel-inner p { opacity: 1; transform: none; }
+.mission-belief { margin: clamp(36px, 5vw, 64px) 0 0; padding: 0; max-width: 900px; }
+.mission-belief-vector { display: block; width: 240px; height: 14px; margin-bottom: 18px; overflow: visible; }
+.mission-belief-line { stroke: var(--primary); stroke-width: 2; stroke-dasharray: 226; stroke-dashoffset: 0; transition: stroke-dashoffset 1.1s ease; }
+.mission-belief-head { fill: none; stroke: var(--primary); stroke-width: 2; transition: opacity .4s .9s; }
+.scroll-pending:not(.scroll-visible) .mission-belief-line { stroke-dashoffset: 226; }
+.scroll-pending:not(.scroll-visible) .mission-belief-head { opacity: 0; }
+.mission-belief p { margin: 0; font-size: clamp(19px, 2.1vw, 28px); font-weight: 700; line-height: 1.45; letter-spacing: -.01em; }
+@media (max-width: 700px) {
+  .mission-focus-button { gap: 12px; padding: 16px 2px 16px 14px; }
+  .mission-focus-panel-inner p { padding: 0 8px 20px 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mission-focus-panel { transition: none; }
+  .mission-focus-panel-inner p { opacity: 1; transform: none; transition: none; }
+  .mission-focus-item::before { transition: none; }
+  .mission-belief-line, .mission-belief-head { transition: none; }
+}

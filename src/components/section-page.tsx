@@ -3,6 +3,7 @@ import { sections, demoEnterprises, images } from "@/data/project";
 import { Button } from "@/components/ui/button";
 import { SiteShell, useParticipation } from "@/components/site-shell";
 import { ProjectDirections } from "@/components/home-sections";
+import { MissionSection } from "@/components/mission-section";
 
 function SectionContent({ section }: { section: keyof typeof sections }) {
   const info = sections[section];
@@ -16,6 +17,7 @@ function SectionContent({ section }: { section: keyof typeof sections }) {
           <p className="max-w-2xl text-sm leading-7 text-on-ink-muted">{info.description}</p>
         </div>
       </div>
+      {section === "about" && <MissionSection />}
       <div className="container-wide">
         <div className="page-body reveal">
           <h2>{info.label}</h2>
