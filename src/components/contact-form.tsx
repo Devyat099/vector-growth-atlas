@@ -97,8 +97,7 @@ export function ContactForm() {
       </div>
       <label className="consent-label">
         <input type="checkbox" name="consent" />Я согласен на обработку персональных данных для
-        рассмотрения заявки на участие в проекте. В демонстрационном режиме обработка и передача не
-        выполняются.
+        рассмотрения заявки на участие в проекте.
       </label>
       {errors["consent"] && (
         <p className="field-error" role="alert">
