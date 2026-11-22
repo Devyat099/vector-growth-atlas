@@ -17,6 +17,7 @@ function SectionContent({ section }: { section: keyof typeof sections }) {
         </div>
       </div>
       {section === "about" && <MissionSection />}
+      {section !== "about" && (
       <div className="container-wide">
         <div className="page-body reveal">
           <h2>{info.label}</h2>
@@ -66,6 +67,7 @@ function SectionContent({ section }: { section: keyof typeof sections }) {
           )}
         </div>
       </div>
+      )}
     </main>
   );
 }
