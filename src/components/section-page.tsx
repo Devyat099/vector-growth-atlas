@@ -2,7 +2,6 @@ import { Film, ArrowUpRight, ChevronDown, Factory } from "lucide-react";
 import { sections, demoEnterprises, images } from "@/data/project";
 import { Button } from "@/components/ui/button";
 import { SiteShell, useParticipation } from "@/components/site-shell";
-import { ProjectDirections } from "@/components/home-sections";
 import { MissionSection } from "@/components/mission-section";
 
 function SectionContent({ section }: { section: keyof typeof sections }) {
@@ -67,7 +66,6 @@ function SectionContent({ section }: { section: keyof typeof sections }) {
           )}
         </div>
       </div>
-      {section === "about" && <ProjectDirections />}
     </main>
   );
 }
