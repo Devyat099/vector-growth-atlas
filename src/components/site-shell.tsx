@@ -142,7 +142,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
         <DialogContent className="form-dialog">
           <DialogTitle>Предложить предприятие</DialogTitle>
           <DialogDescription>
-            Расскажите о производстве и людях, которых должна узнать страна.
+            Расскажите о производстве и людях, которых должна узнать вся страна.
           </DialogDescription>
           <ContactForm />
         </DialogContent>
