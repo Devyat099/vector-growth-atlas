@@ -40,9 +40,6 @@ export function ContactForm() {
     );
   return (
     <form onSubmit={submit} noValidate>
-      <div className="demo-note">
-        Демонстрационный режим — данные не отправляются и не сохраняются.
-      </div>
       <div className="form-grid">
         {(
           [
