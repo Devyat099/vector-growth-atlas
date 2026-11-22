@@ -14,7 +14,7 @@ import {
   Lock,
   HardHat,
 } from "lucide-react";
-import { directions, episode, images } from "@/data/project";
+import { directions, episode, images, people } from "@/data/project";
 import { GrowthMark, Tricolor } from "@/components/brand";
 import { HeroSparks } from "@/components/hero-sparks";
 import markAsset from "@/assets/logo-mark-lg.png";
@@ -153,7 +153,7 @@ export function EpisodeSection() {
       <div className="container-wide">
         <div className="section-top">
           <div>
-            <div className="section-number">02 / {episode.label}</div>
+            <div className="section-number">03 / {episode.label}</div>
             <h2>
               {episode.titleLines[0]}{" "}
               <br className="hidden sm:block" />
@@ -193,7 +193,7 @@ export function GeographySection() {
       <div className="container-wide">
         <div className="section-top">
           <div>
-            <div className="section-number">03 / География проекта</div>
+            <div className="section-number">04 / География проекта</div>
             <h2>Вся Россия — в фокусе.</h2>
           </div>
           <p className="section-summary">
@@ -257,7 +257,7 @@ export function ProcessSection() {
       <div className="container-wide">
         <div className="section-top">
           <div>
-            <div className="section-number">04 / Как это устроено</div>
+            <div className="section-number">05 / Как это устроено</div>
             <h2>Как проходят съёмки: один день, который не отвлечёт от работы.</h2>
           </div>
           <p className="section-summary">
@@ -300,7 +300,7 @@ export function ParticipationSection() {
       <GrowthMark className="participation-arrow" />
       <div className="container-wide participation-inner">
         <div>
-          <div className="section-number">05 / Станьте частью проекта</div>
+          <div className="section-number">06 / Станьте частью проекта</div>
           <h2>
             Расскажите о своём
             <br />
@@ -316,6 +316,33 @@ export function ParticipationSection() {
           <Button variant="hero" size="hero" onClick={open}>
             Предложить предприятие <ArrowUpRight />
           </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function PeopleSection() {
+  return (
+    <section className="editorial-section people-section">
+      <div className="container-wide people-grid">
+        <div className="reveal">
+          <div className="section-number">02 / {people.label}</div>
+          <h2>{people.title}</h2>
+          <Tricolor />
+        </div>
+        <div className="people-body reveal">
+          <p className="people-lead">{people.lead}</p>
+          <ul className="people-list">
+            {people.paths.map((p) => (
+              <li key={p}>
+                <CircleArrowRight aria-hidden className="people-icon" />
+                <span>{p}</span>
+              </li>
+            ))}
+          </ul>
+          <blockquote className="people-quote">{people.quote}</blockquote>
+          <p className="people-outro">{people.outro}</p>
         </div>
       </div>
     </section>

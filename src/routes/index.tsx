@@ -4,6 +4,7 @@ import {
   HeroSection,
   ProjectDirections,
   EpisodeSection,
+  PeopleSection,
   GeographySection,
   ProcessSection,
   ParticipationSection,
@@ -24,6 +25,7 @@ function Index() {
       <main>
         <HeroSection />
         <ProjectDirections />
+        <PeopleSection />
         <EpisodeSection />
         <GeographySection />
         <ProcessSection />

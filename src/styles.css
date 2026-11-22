@@ -1608,3 +1608,13 @@ h2 {
     transition: none !important;
   }
 }
+
+.people-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.people-grid h2 { margin-bottom: 24px; }
+.people-lead { font-size: clamp(17px, 1.5vw, 20px); line-height: 1.6; color: var(--foreground); }
+.people-list { list-style: none; padding: 0; margin: 28px 0; display: grid; gap: 14px; }
+.people-list li { display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-top: 1px solid var(--border); line-height: 1.5; }
+.people-icon { flex: none; width: 22px; height: 22px; color: var(--primary); margin-top: 1px; }
+.people-quote { margin: 0 0 24px; padding: 20px 24px; border-left: 4px solid var(--primary); background: var(--muted); font-size: clamp(18px, 1.7vw, 23px); font-weight: 700; line-height: 1.4; }
+.people-outro { color: var(--muted-foreground); line-height: 1.6; }
+@media (max-width: 860px) { .people-grid { grid-template-columns: 1fr; } }
