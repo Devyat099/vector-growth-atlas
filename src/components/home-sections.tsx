@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   ArrowUpRight,
@@ -330,6 +331,7 @@ export function PeopleSection() {
           <div className="section-number">02 / {people.label}</div>
           <h2>{people.title}</h2>
           <Tricolor />
+          <PeoplePhoto />
         </div>
         <div className="people-body reveal">
           <p className="people-lead">{people.lead}</p>
@@ -346,5 +348,34 @@ export function PeopleSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+function PeoplePhoto() {
+  const ref = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setVisible(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.25 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return (
+    <figure ref={ref} className={`people-photo${visible ? " is-visible" : ""}`}>
+      <img src={people.image} alt={people.imageAlt} loading="lazy" />
+      <figcaption>
+        <span aria-hidden className="people-photo-dot" />
+        {people.label}
+      </figcaption>
+    </figure>
   );
 }

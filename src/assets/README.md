@@ -38,3 +38,5 @@ counters were left open.
 - `logo-wm-dark-sm.png` — wordmark for light surfaces (footer).
 - `public/favicon.png` — the sign, cropped to its own bounds and placed on a 256x256
   canvas with a 7% margin, so the mark fills the tab icon as much as possible.
+
+People section: https://images.unsplash.com/photo-1581091226825-a6a2a5aee158 (Unsplash License), cropped to 4:5 → people-engineer.jpg.

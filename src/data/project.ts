@@ -1,3 +1,4 @@
+import peopleEngineerImage from "@/assets/people-engineer.jpg";
 import welding from "@/assets/industrial-welding.jpg";
 import engineer from "@/assets/engineer.jpg";
 import production from "@/assets/production.jpg";
@@ -213,6 +214,8 @@ export function pageHead(title: string, description: string) {
 
 export const people = {
   label: "Люди производства",
+  image: peopleEngineerImage,
+  imageAlt: "Инженер работает за ноутбуком у стенда со сборкой электрооборудования",
   title: "За каждым большим производством стоят люди",
   lead: "У каждого предприятия своя история. За сложнейшими технологиями, современным оборудованием и масштабными производственными процессами стоят люди, которые ежедневно вкладывают в работу знания, опыт и мастерство.",
   paths: [
